@@ -11,7 +11,7 @@ export default class NetSalary extends Component {
     constructor() {
         super();
 
-        var valueInput = 1045;
+        var valueInput = 1000;
         let result = this.calculateSalary(valueInput);
 
         this.state = {
@@ -77,7 +77,7 @@ export default class NetSalary extends Component {
         return (
             <div>
                 <h1 className={css.textAlign}>Net Salary</h1>
-                <InputSalary label="Salary" step="100" value="1045" onChange={this.handleOnChangeInput} />
+                <InputSalary label="Salary" step="100" value="1000" onChange={this.handleOnChangeInput} />
                 <ProcessedData
                     baseINSS={formatNumber(baseINSS)}
                     discountINSS={formatNumber(discountINSS)}

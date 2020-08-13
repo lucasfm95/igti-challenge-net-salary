@@ -11,11 +11,17 @@ export default class InputSalary extends Component {
     }
 
     handleInputChange = ({ target }) => {
+
+        let value = target.value;
+
+        if (value < 0)
+            value = 0;
+
         this.setState({
-            value: target.value
+            value
         });
 
-        this.props.onChange(target.value);
+        this.props.onChange(value);
     }
 
     render() {
