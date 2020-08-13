@@ -11,7 +11,7 @@ export default class NetSalary extends Component {
     constructor() {
         super();
 
-        var valueInput = 1000;
+        var valueInput = 1045;
         let result = this.calculateSalary(valueInput);
 
         this.state = {
@@ -44,8 +44,19 @@ export default class NetSalary extends Component {
         let salaryCalculated = calculateSalaryFrom(salary);
 
         let percentageINSS = (salaryCalculated.discountINSS / salaryCalculated.baseINSS) * 100;
+
+        if (isNaN(percentageINSS))
+            percentageINSS = 0;
+
         let percentageIR = (salaryCalculated.discountIRPF / salaryCalculated.baseIRPF) * 100;
+
+        if (isNaN(percentageIR))
+            percentageIR = 0;
+
         let percentageNetSalary = (salaryCalculated.netSalary / salary) * 100;
+
+        if (isNaN(percentageNetSalary))
+            percentageNetSalary = 0;
 
         let resul = {
             baseINSS: round(salaryCalculated.baseINSS),
@@ -66,7 +77,7 @@ export default class NetSalary extends Component {
         return (
             <div>
                 <h1 className={css.textAlign}>Net Salary</h1>
-                <InputSalary label="Salary" step="100" value="1000" onChange={this.handleOnChangeInput} />
+                <InputSalary label="Salary" step="100" value="1045" onChange={this.handleOnChangeInput} />
                 <ProcessedData
                     baseINSS={formatNumber(baseINSS)}
                     discountINSS={formatNumber(discountINSS)}
