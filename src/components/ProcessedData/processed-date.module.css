@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.itemContainer {
+    margin: 5px;
+    width: 300px;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-color: bla;
+}
