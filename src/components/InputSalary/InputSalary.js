@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import css from './input-salary.module.css';
 
 export default class InputSalary extends Component {
     constructor(props) {
@@ -21,10 +22,10 @@ export default class InputSalary extends Component {
         const { step, label } = this.props;
         const { value } = this.state;
         return (
-            <>
+            <div className={css.container}>
                 <span>{label}</span>
                 <input type="number" step={step} value={value} onChange={this.handleInputChange} />
-            </>
+            </div>
         )
     }
 }
