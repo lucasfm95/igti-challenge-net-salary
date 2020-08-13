@@ -29,7 +29,7 @@ export default class InputSalary extends Component {
         const { value } = this.state;
         return (
             <div className={css.container}>
-                <span>{label}</span>
+                <span>{label}: </span>
                 <input type="number" step={step} value={value} onChange={this.handleInputChange} />
             </div>
         )

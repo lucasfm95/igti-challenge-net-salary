@@ -3,13 +3,6 @@
     flex-direction: row;
     padding-left: 25px;
     padding-right: 25px;
-    align-content: center;
-}
-
-.itemContainer {
-    margin-right: 25px;
-    min-width: 300px;
-    border-bottom: 1px;
-    border-bottom-style: solid;
-    border-color: bla;
+    justify-content: space-between;
+    align-items: center;
 }

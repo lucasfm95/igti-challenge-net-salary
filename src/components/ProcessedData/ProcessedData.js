@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import css from './processed-date.module.css';
+import InputReadOnly from '../InputReadOnly/InputReadOnly';
 
 export default class ProcessedData extends Component {
     render() {
         const { baseINSS, discountINSS, percentageDiscountINSS, baseIR, discountIR, percentageDiscountIR, netSalary, percentageNetSalary } = this.props;
         return (
             <div className={css.container}>
-                <div className={css.itemContainer}><span>Base INSS: R$ {baseINSS}</span></div>
-                <div className={css.itemContainer}><span>Discount INSS: R$ {discountINSS} ({percentageDiscountINSS}%)</span></div>
-                <div className={css.itemContainer}><span>Base IR: R$ {baseIR}</span></div>
-                <div className={css.itemContainer}><span>Discount IR: R$ {discountIR} ({percentageDiscountIR}%)</span></div>
-                <div className={css.itemContainer}><span>Net Salary: R$ {netSalary} ({percentageNetSalary}%)</span></div>
+                <InputReadOnly label="Base INSS:" value={`R$ ${baseINSS}`} />
+                <InputReadOnly label="Discount INSS:" value={`R$ ${discountINSS} (${percentageDiscountINSS}%)`} color={"#e67e22"} />
+                <InputReadOnly label="Base IR:" value={`R$ ${baseIR}`} />
+                <InputReadOnly label="Discount IR:" value={`R$ ${discountIR} (${percentageDiscountIR}%)`} color={"#c0392b"} />
+                <InputReadOnly label="Net Salary:" value={`R$ ${netSalary} (${percentageNetSalary}%)`} color={"#16a085"} />
             </div>
         )
     }
